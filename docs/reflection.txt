@@ -1,0 +1,75 @@
+In-Class Activity 07 — Digital Pet
+Individual Critical-Thinking Reflection
+
+Student name: ______________________________
+Student ID:   ______________________________
+Pathway: Graduate
+
+Write each answer in your own words. Include a brief example from this project
+where it helps explain your reasoning.
+
+1. Why does the pet screen need state, and which data could remain in immutable
+   widget configuration? Distinguish changing values from configuration and
+   explain the widget/State relationship.
+
+Answer:
+
+
+2. What does setState() do, and what does it not do? Describe the callback and
+   scheduled rebuild; explain why it is not permanent storage and does not
+   itself save data.
+
+Answer:
+
+
+3. How does BlendMode.modulate combine source and filter colors, and what image
+   works best? Discuss per-channel multiplication and why dark source pixels
+   can make a tint hard to see.
+
+Answer:
+
+
+4. Why must the periodic timer be canceled in dispose()? Explain lifecycle
+   ownership and the risk of callbacks after a screen is removed.
+
+Answer:
+
+
+5. What are the trade-offs of tinting one image instead of storing separate
+   mood images? Consider package size, visual quality, asset flexibility, and
+   when distinct artwork is still appropriate.
+
+Answer:
+
+
+6. How would you persist the pet after the app closes? Name a suitable local
+   persistence approach and explain which fields should be stored and restored.
+
+Answer:
+
+
+7. Why can Flutter rebuild a widget after setState() without recreating the
+   whole app? Explain declarative UI and how Flutter updates the affected
+   element/render tree where possible.
+
+Answer:
+
+
+8. How would you separate pet rules from the widget tree as the app grows? Give
+   one concrete boundary between presentation, state, and game logic.
+
+Answer:
+
+
+9. How does Dart null safety help with a mood-color function or optional timer?
+   Explain non-null return types and why nullable resources should be checked
+   or safely canceled.
+
+Answer:
+
+
+10. When would ColorFiltered be the wrong choice for a pet’s mood or evolution?
+    Discuss when each mood needs distinct artwork, shapes, or more than a color
+    tint.
+
+Answer:
