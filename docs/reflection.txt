@@ -2,6 +2,7 @@
 
 Student name: Augustin Kabamba
 Pathway: Graduate
+Repository: https://github.com/Akabamba24/inclass07_Pet
 
 These are simple-English draft answers. Review them and add any personal
 details before submitting your reflection.
