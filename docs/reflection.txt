@@ -1,72 +1,81 @@
-
+In-Class Activity 07 — Digital Pet
+Individual Critical-Thinking Reflection
 
 Student name: Augustin Kabamba
+Student ID:   ______________________________
+Pathway: Graduate
 
-Write each answer in your own words. Include a brief example from this project
-where it helps explain your reasoning.
+These are simple-English draft answers. Review them and add any personal
+details before submitting your reflection.
 
 1. Why does the pet screen need state, and which data could remain in immutable
-   widget configuration? Distinguish changing values from configuration and
-   explain the widget/State relationship.
+   widget configuration?
 
-Answer:
+Answer: The pet’s name, happiness, hunger, energy, activity, and outcome can
+change, so the app keeps them in state. Things like colors and button labels
+can stay as fixed settings. The screen rebuilds when the state changes so it
+can show the new values.
 
+2. What does setState() do, and what does it not do?
 
-2. What does setState() do, and what does it not do? Describe the callback and
-   scheduled rebuild; explain why it is not permanent storage and does not
-   itself save data.
-
-Answer:
-
+Answer: setState() tells Flutter that this part of the screen should rebuild
+after a value changes. In this app, the game controller notifies the screen,
+and the screen uses setState() to refresh. It does not save the pet’s data
+after the app closes.
 
 3. How does BlendMode.modulate combine source and filter colors, and what image
-   works best? Discuss per-channel multiplication and why dark source pixels
-   can make a tint hard to see.
+   works best?
 
-Answer:
+Answer: BlendMode.modulate multiplies the image color by the tint color for
+each color channel. A light grayscale image works well because its details
+remain visible and the mood tint is easy to see. Dark pixels stay dark, so a
+dark image can hide the tint.
 
+4. Why must the periodic timer be canceled in dispose()?
 
-4. Why must the periodic timer be canceled in dispose()? Explain lifecycle
-   ownership and the risk of callbacks after a screen is removed.
-
-Answer:
-
+Answer: The timer should stop when the screen or game controller is removed.
+If it keeps running, it can try to update a screen that no longer exists and
+cause errors. The controller cancels its timers when it is disposed.
 
 5. What are the trade-offs of tinting one image instead of storing separate
-   mood images? Consider package size, visual quality, asset flexibility, and
-   when distinct artwork is still appropriate.
+   mood images?
 
-Answer:
+Answer: One tinted image uses less storage and keeps the pet’s shape consistent
+in every mood. But changing its color cannot change the pet’s pose or face very
+much. Separate images give more artistic control, but they take more space and
+need more assets to maintain.
 
+6. How would you persist the pet after the app closes?
 
-6. How would you persist the pet after the app closes? Name a suitable local
-   persistence approach and explain which fields should be stored and restored.
-
-Answer:
-
+Answer: I could use local preferences, such as the shared_preferences package,
+to save the name, meter values, and selected activity. When the app opens, it
+could load those values and clamp the meters between 0 and 100. This project
+does not save pet data yet.
 
 7. Why can Flutter rebuild a widget after setState() without recreating the
-   whole app? Explain declarative UI and how Flutter updates the affected
-   element/render tree where possible.
+   whole app?
 
-Answer:
+Answer: Flutter describes the screen from the current state. After setState(),
+it builds the updated part and reuses parts of the screen that have not
+changed. This makes updates faster than starting the whole app again.
 
+8. How would you separate pet rules from the widget tree as the app grows?
 
-8. How would you separate pet rules from the widget tree as the app grows? Give
-   one concrete boundary between presentation, state, and game logic.
-
-Answer:
-
+Answer: This app puts meter changes and mood rules in PetRules, and puts timer
+and outcome handling in PetCareController. The screen displays that state and
+calls the controller when a button is pressed. This lets the rules be tested
+without drawing the screen.
 
 9. How does Dart null safety help with a mood-color function or optional timer?
-   Explain non-null return types and why nullable resources should be checked
-   or safely canceled.
 
-Answer:
-
+Answer: The mood function returns a color for every mood, so the screen does
+not need to handle a missing color. A timer may not exist yet, so it is marked
+optional and canceled safely with a null check. This helps prevent errors from
+using a missing value.
 
 10. When would ColorFiltered be the wrong choice for a pet’s mood or evolution?
-    Discuss when each mood needs distinct artwork, shapes, or more than a color
-    tint.
 
-Answer:
+Answer: ColorFiltered is not enough when a mood needs a different face, pose,
+or body shape. It only changes colors, and dark parts of the image can stay
+hard to see. Separate artwork is better when the pet needs major visual
+changes.

@@ -83,4 +83,4 @@ This repository is being completed as an individual project, as stated by the st
 
 ## Individual reflection and submission
 
-Use the [plain-text reflection template](docs/reflection.txt) to draft your own answers to all ten critical-thinking questions; fill in your name and student ID. The assignment’s final upload still requires your own Word reflection, so transfer your completed answers into the required `.docx`. Also submit `github_link.txt`, the correctly named release APK, and the individual reflection to the course’s labeled iCollege folder, then verify that the APK launches.
+Review and personalize the completed [plain-text reflection draft](docs/reflection.txt), and add your student ID. The assignment’s final upload still requires your Word reflection, so transfer the final answers into the required `.docx`. Also submit `github_link.txt`, the correctly named release APK, and the individual reflection to the course’s labeled iCollege folder, then verify that the APK launches.
